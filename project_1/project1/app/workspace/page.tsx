@@ -6,25 +6,25 @@ const Workspace = () => {
   const characters = [
     {
       name: "The Doctor",
-      img: "/",
+      img: "/doctor.jpg",
       des: '"Now inhale deeply, Mrs.Saunders"',
       page: "/doctor",
     },
     {
       name: "The Lawyer",
-      img: "/",
+      img: "/lawyer.jpg",
       des: '"The evidence speaks for itself"',
       page: "/lawyer",
     },
     {
       name: "The Engineer",
-      img: "/",
+      img: "/engineer.jpg",
       des: '"Run the test again"',
       page: "/engineer",
     },
     {
       name: "The Banker",
-      img: "/",
+      img: "/banker.jpg",
       des: '"Let’s close the deal"',
       page: "/banker",
     },
