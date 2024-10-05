@@ -36,14 +36,14 @@ const Workspace = () => {
   ];
 
   return (
-    <div id="workspace" className="h-screen flex justify-center items-center">
+    <div id="workspace" className="min-h-screen flex flex-col justify-center items-center p-4">
       {/* Render the Popup if showPopup is true */}
       {showPopup && <Popup onClose={() => setShowPopup(false)} />}
 
       {/* Main Content */}
       <div
         id="card-container"
-        className="w-[640px] grid grid-cols-2 gap-8 mx-auto"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-[640px] mx-auto justify-items-center"
       >
         {characters.map((character, index) => (
           <Link href={character.page} key={index}>
@@ -60,3 +60,4 @@ const Workspace = () => {
 };
 
 export default Workspace;
+
