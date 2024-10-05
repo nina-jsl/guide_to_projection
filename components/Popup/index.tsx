@@ -11,7 +11,7 @@ const PopUp = ({ onClose }: { onClose: () => void }) => {
 
         {/* Centered description */}
         <div id="des-container" className="flex flex-col items-center mt-6">
-          <p className="w-[90%] text-center text-black">
+          <p className="w-[90%] text-center text-black text-sm">
             In this interactive experience, you will explore the hidden layers
             of different professions, uncovering the &apos;truths&apos; behind
             the mask they wear. Each role has multiple layers to reveal—click on
@@ -21,26 +21,26 @@ const PopUp = ({ onClose }: { onClose: () => void }) => {
 
         {/* Left-aligned How to Play */}
         <div className="mt-6">
-          <h2 className="w-[90%] mx-auto text-left text-lg font-semibold">
+          <h2 className="w-[90%] mx-auto text-left text-sm font-semibold ">
             How to Play:
           </h2>
-          <p className="w-[90%] mx-auto mt-2 text-black">
+          <p className="w-[90%] mx-auto mt-2 text-black text-sm">
             Select a Profession: Choose one of the profession cards to begin
             (Doctor, Lawyer, Engineer, or Investment Banker).
           </p>
-          <p className="w-[90%] mx-auto mt-2 text-black">
+          <p className="w-[90%] mx-auto mt-2 text-black text-sm">
             Uncover Layers: Click on the image to reveal each layer of the
             character&apos;s mask, moving from the surface image to deeper, more
             complex &apos;realities&apos;.
           </p>
-          <p className="w-[90%] mx-auto mt-2 text-black">
+          <p className="w-[90%] mx-auto mt-2 text-black text-sm">
             Explore Hidden Insights: On Layer 3, look for spirals scattered
             across the scene. Click on these spirals to reveal hidden,
             stereotypical interpretations of each profession. Clicking again
             will hide the insight.
           </p>
 
-          <p className="w-[90%] mx-auto mt-2 text-black">
+          <p className="w-[90%] mx-auto mt-2 text-black text-sm">
             Reflect: As you peel back each layer, reflect on how societal
             expectations, assumptions, and personal struggles shape these roles.
           </p>
