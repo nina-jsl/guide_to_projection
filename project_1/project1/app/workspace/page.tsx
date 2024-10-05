@@ -8,27 +8,28 @@ const Workspace = () => {
       name: "The Doctor",
       img: "/doctor.jpg",
       des: '"Now inhale deeply, Mrs.Saunders"',
-      page: "/doctor",
+      page: "/workspace/doctor/layer1",
     },
     {
       name: "The Lawyer",
       img: "/lawyer.jpg",
       des: '"The evidence speaks for itself"',
-      page: "/lawyer",
+      page: "/workspace/lawyer/layer1",
     },
     {
       name: "The Engineer",
       img: "/engineer.jpg",
       des: '"Run the test again"',
-      page: "/engineer",
+      page: "/workspace/engineer/layer1",
     },
     {
       name: "The Banker",
       img: "/banker.jpg",
       des: '"Let’s close the deal"',
-      page: "/banker",
+      page: "/workspace/banker/layer1",
     },
   ];
+
   return (
     <div id="workspace" className="h-screen flex justify-center items-center">
       <div
@@ -36,9 +37,8 @@ const Workspace = () => {
         className="w-[640px] grid grid-cols-2 gap-8 mx-auto"
       >
         {characters.map((character, index) => (
-          <Link href = {character.page} key = {index}>
+          <Link href={character.page} key={index}>
             <Card
-              key={index}
               name={character.name}
               img={character.img}
               des={character.des}
