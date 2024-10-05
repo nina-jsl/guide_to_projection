@@ -1,8 +1,13 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Link from "next/link";
 import Card from "@/components/Card";
+import Popup from "@/components/Popup";
 
 const Workspace = () => {
+  // State to control whether the popup is shown or hidden
+  const [showPopup, setShowPopup] = useState(true);
+
   const characters = [
     {
       name: "The Doctor",
@@ -32,6 +37,10 @@ const Workspace = () => {
 
   return (
     <div id="workspace" className="h-screen flex justify-center items-center">
+      {/* Render the Popup if showPopup is true */}
+      {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+
+      {/* Main Content */}
       <div
         id="card-container"
         className="w-[640px] grid grid-cols-2 gap-8 mx-auto"
