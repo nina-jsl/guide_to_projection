@@ -3,10 +3,10 @@ import React from "react";
 import { useState } from "react";
 import Question from "@/components/Question";
 import Story from "@/components/Story";
-import Link from "next/link";
+// import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Nav from "@/components/Nav";
-import Alert from "@/components/Alert"
+import Alert from "@/components/Alert";
 
 const DoctorPage = () => {
   const stories: string[] = [
@@ -68,7 +68,9 @@ const DoctorPage = () => {
     setBackground(backgroundClasses[stage]);
   };
 
-  const handleAlert = () => {};
+  const handleAlert = () => {
+    setShowAlert((prev) => !prev);
+  };
   return (
     <div className="h-screen overflow-hidden">
       <Nav />
@@ -101,7 +103,7 @@ const DoctorPage = () => {
             onSubmitAnswer={handleAnswerSubmit}
           />
           {/* The last question ends, and the summary is shown */}
-          <div className="absolute top-0 left-0 w-screen h-screen bg-white z-10 flex justify-center items-center">
+          <div className="absolute top-0 left-0 w-screen h-screen bg-white flex justify-center items-center">
             <div>
               <h3>
                 This is how your perception of a doctor has evolved over time...
@@ -113,15 +115,21 @@ const DoctorPage = () => {
               </ul>
               <div className="flex w-full justify-end">
                 <button
-                  className="end-button bg-blue-500 px-4 py-2 text-white rounded-md"
+                  className="mt-4 bg-transparent px-4 py-2 rounded-md flex items-center hover:text-blue-500"
                   onClick={handleAlert}
                 >
-                  End
+                  Next{" "}
+                  <FaArrowRight className="ml-2 text-sm hover:text-blue-500 bg-transparent" />
                 </button>
               </div>
-            </div>
-            <div className = "absolute top-0 left-0 z-20">
-              {showAlert && (<Alert />)}
+              <div className="absolute top-0 left-0">
+                {showAlert && (
+                  <Alert
+                    message="What if the doctor lived a very successful life and diligently worked throughout their career? How would you perceive them then?"
+                    onClose={handleAlert}
+                  />
+                )}
+              </div>
             </div>
           </div>
         </div>
