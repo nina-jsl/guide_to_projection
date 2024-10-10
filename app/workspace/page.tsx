@@ -4,6 +4,7 @@ import Link from "next/link";
 import Card from "@/components/Card";
 import Popup from "@/components/Popup";
 
+
 const Workspace = () => {
   // State to control whether the popup is shown or hidden
   const [showPopup, setShowPopup] = useState(true);
@@ -13,7 +14,7 @@ const Workspace = () => {
       name: "The Doctor",
       img: "/doctor.jpg",
       des: '"Now inhale deeply, Mrs.Saunders"',
-      page: "/workspace/doctor/layer1",
+      page: "/Doctor",
     },
     {
       name: "The Lawyer",

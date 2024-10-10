@@ -192,7 +192,7 @@ const LayerPage = ({ params }: LayerPageProps) => {
       </div>
 
       {/* Display description */}
-      <p className="text-left mt-4 mx-8">{currentContent.description}</p>
+      <p className="text-left mx-8">{currentContent.description}</p>
 
       {/* Only show spirals on Layer 3 */}
       {layer === "layer3" &&
