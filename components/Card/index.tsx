@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Card = ({ name = "name holder", img = "", des = "des holder" }) => {
   return (
-    <div className="w-[300px] h-[350px] rounded-md border-2 border-black transition-shadow duration-200 hover:shadow-xl hover:shadow-blue-400">
+    <div className="w-[300px] h-[350px] rounded-md border-2 border-black">
       <div className="h-full mx-4 flex flex-col justify-center items-center">
         {/* replace this with image later */}
         <div className="w-full h-[200px] border-2 mb-4 border-black rounded-md relative">

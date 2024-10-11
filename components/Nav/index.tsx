@@ -9,7 +9,7 @@ const Nav = () => {
     setShowPopup(prev => !prev);
   }
   return (
-    <nav className="w-screen px-8 py-4 flex justify-end">
+    <nav className="w-screen px-8 py-4 flex justify-end bg-transparent">
       <FiHelpCircle className="text-xl bg-transparent hover:text-blue-500" onClick={handleOnClick}/>
       {showPopup && <Popup onClose={() => setShowPopup(false)} />}
     </nav>
