@@ -3,10 +3,10 @@ import React from "react";
 import { useState } from "react";
 import Question from "@/components/Question";
 import Story from "@/components/Story";
-// import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Nav from "@/components/Nav";
 import Alert from "@/components/Alert";
+import { motion, AnimatePresence} from "framer-motion";
 
 const DoctorPage = () => {
   const stories: string[] = [
@@ -27,11 +27,18 @@ const DoctorPage = () => {
     "How do you think a doctor feels when they reach burnout? What impact does it have on their ability to care for patients?",
   ];
 
+  const alerts: string[] = [
+    "What if the doctor lived a very successful life and diligently worked throughout their career? How would you perceive them then?",
+    "What if this hard-working doctor wasn’t able to save a patient and was blamed by the patient's family for the failure? How would this affect your perception of the doctor?",
+    "Now that you’ve considered these scenarios, how do you think this doctor views themselves? What would their thoughts and actions be after such a journey?",
+  ];
+
   const [userAnswers, setUserAnswers] = useState<string[]>([]);
   const [currentStage, setCurrentState] = useState<number>(0);
   const [isStoryVisible, setIsStoryVisible] = useState<boolean>(false);
   const [background, setBackground] = useState<string>("bg-white");
   const [isSummaryVisible, setIsSummaryVisible] = useState<boolean>(false);
+  const [currentAlertIndex, setCurrentAlertIndex] = useState<number>(-1);
   const [showAlert, setShowAlert] = useState<boolean>(false);
 
   const handleAnswerSubmit = (answer: string) => {
@@ -68,8 +75,17 @@ const DoctorPage = () => {
     setBackground(backgroundClasses[stage]);
   };
 
-  const handleAlert = () => {
+  const startAlerts = () => {
+    setCurrentAlertIndex(0);
     setShowAlert((prev) => !prev);
+  };
+
+  const handleAlertClose = () => {
+    if (currentAlertIndex < alerts.length - 1) {
+      setCurrentAlertIndex(currentAlertIndex + 1); // Show next alert
+    } else {
+      window.location.href = "/workspace"; // Redirect to /workspace after the last alert
+    }
   };
   return (
     <div className="h-screen overflow-hidden">
@@ -116,18 +132,36 @@ const DoctorPage = () => {
               <div className="flex w-full justify-end">
                 <button
                   className="mt-4 bg-transparent px-4 py-2 rounded-md flex items-center hover:text-blue-500"
-                  onClick={handleAlert}
+                  onClick={startAlerts}
                 >
-                  Next{" "}
+                  End{" "}
                   <FaArrowRight className="ml-2 text-sm hover:text-blue-500 bg-transparent" />
                 </button>
               </div>
               <div className="absolute top-0 left-0">
                 {showAlert && (
-                  <Alert
-                    message="What if the doctor lived a very successful life and diligently worked throughout their career? How would you perceive them then?"
-                    onClose={handleAlert}
-                  />
+                  <AnimatePresence>
+                    {currentAlertIndex >= 0 &&
+                      currentAlertIndex < alerts.length && (
+                        <motion.div
+                          key={currentAlertIndex} // Key is essential for tracking the alert
+                          initial={{ opacity: 0, y: -20 }} // Start with fade out and slight upward position
+                          animate={{ opacity: 1, y: 0 }} // Animate to fully visible and move to correct position
+                          exit={{ opacity: 0, y: -20 }} // Exit with fade out and slight upward movement
+                          transition={{
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 30,
+                            duration: 0.5, // Control duration for smoothness
+                          }}
+                        >
+                          <Alert
+                            message={alerts[currentAlertIndex]}
+                            onClose={handleAlertClose} // Move to next alert or redirect after last
+                          />
+                        </motion.div>
+                      )}
+                  </AnimatePresence>
                 )}
               </div>
             </div>
