@@ -11,7 +11,7 @@ const PopUp = ({ onClose }: { onClose: () => void }) => {
           </h1>
           {/* Centered description */}
           <div id="des-container" className="flex flex-col items-center mt-6">
-            <p className="w-[90%] text-center text-black text-sm">
+            <p className="w-[90%] text-center text-black ">
               Welcome to a world where every profession carries not just
               expectations, but hidden depths. The doctor who saves lives. The
               lawyer who defends justice. The engineer who builds the future.
