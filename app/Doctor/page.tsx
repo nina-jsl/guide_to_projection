@@ -24,8 +24,8 @@ const DoctorPage = () => {
     "How do you imagine a doctor feels in their first year on the job? What kind of challenges might they face as they transition from training to practice?",
     "What happens when a doctor has seen too much suffering? How do you think their ability to connect with patients changes over time?",
     "When doctors start focusing on profits rather than patients, how do you think it affects their behavior? What drives this change in priorities?",
-    "How do you think a doctor feels when they reach burnout? What impact does it have on their ability to care for patients?",
-  ];
+    "After exploring the life of this doctor, how has your perception shifted? Reflect on the masks you may have placed on them throughout the journey. What does this process reveal about how we see professions like this?",
+  ]
 
   const alerts: string[] = [
     "What if the doctor lived a very successful life and diligently worked throughout their career? How would you perceive them then?",
