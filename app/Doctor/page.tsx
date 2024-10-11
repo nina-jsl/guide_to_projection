@@ -120,7 +120,8 @@ const DoctorPage = () => {
           />
           {/* The last question ends, and the summary is shown */}
           <div className="absolute top-0 left-0 w-screen h-screen bg-white flex justify-center items-center">
-            <div>
+            <div className = "w-2/3">
+              <div>
               <h3>
                 This is how your perception of a doctor has evolved over time...
               </h3>
@@ -129,6 +130,7 @@ const DoctorPage = () => {
                   <li key={index}>{`Stage ${index + 1}: ${answer}`}</li>
                 ))}
               </ul>
+              </div>
               <div className="flex w-full justify-end">
                 <button
                   className="mt-4 bg-transparent px-4 py-2 rounded-md flex items-center hover:text-blue-500"
