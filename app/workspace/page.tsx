@@ -4,7 +4,6 @@ import Link from "next/link";
 import Card from "@/components/Card";
 import Popup from "@/components/Popup";
 import { FaLock } from "react-icons/fa";
-import { AiOutlineClose } from "react-icons/ai";
 
 const Workspace = () => {
   // State to control whether the popup is shown or hidden
