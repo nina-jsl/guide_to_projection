@@ -48,7 +48,7 @@ const PopUp = ({ onClose }: { onClose: () => void }) => {
               roles.
             </p>
             <p className="w-[90%] mx-auto mt-2 text-blue-500 text-sm font-semibold mb-8">
-              **This guide appears only once. If you need assistance later, use
+              **If you need assistance later, use
               the &quot;?&quot; icon in the top corner.
             </p>
           </div>
