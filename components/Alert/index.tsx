@@ -9,7 +9,7 @@ interface AlertProps {
 const Alert: FC<AlertProps> = ({ message, onClose }) => {
   return (
     <div className="w-screen h-screen flex justify-center items-center">
-      <div className="relative w-[30%] h-[35%] bg-red-400 bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 rounded-md p-6 flex flex-col justify-between">
+      <div className="relative w-[30%] h-[35%] bg-red-400 bg-opacity-20 backdrop-blur-lg border border-white border-opacity-20 rounded-md p-6 flex flex-col justify-between">
         {/* Alert message */}
         <div className = "w-full h-full flex justify-center items-center bg-transparent">
           <p className="text-center bg-transparent">{message}</p>

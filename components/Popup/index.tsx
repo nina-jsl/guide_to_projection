@@ -2,11 +2,11 @@ const PopUp = ({ onClose }: { onClose: () => void }) => {
   return (
     <div
       id="Popup"
-      className="absolute w-screen h-[90%] flex justify-center items-center z-10"
+      className="bg-transparent absolute w-screen h-[90%] flex justify-center items-center z-10"
     >
       <div className="bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 w-2/3 h-[70%] rounded-md shadow-lg p-8 relative">
         <div className="text-container w-full h-full mx-auto my-8 overflow-auto scrollbar">
-          <h1 className="text-center font-semibold text-2xl mt-7 text-black">
+          <h1 className="bg-transparent text-center font-semibold text-2xl mt-7 text-black">
             Welcome to &quot;A Guide to Projection&quot;
           </h1>
           {/* Centered description */}
