@@ -20,7 +20,7 @@ const PopUp = ({ onClose }: { onClose: () => void }) => {
               desires, and the weight of responsibility they bear.
             </p>
             <br />
-            <p className="w-[90%] text-center text-black text-sm">
+            <p className="w-[90%] text-center text-black">
               In this world, you are about to step into their shoes and see
               beyond the surface.
             </p>
